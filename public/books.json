@@ -1,0 +1,80 @@
+[
+  {
+    "bookId": 1,
+    "bookName": "The Dating Playbook for Men",
+    "author": "Andrew Ferebee",
+    "image": "dating_playbook.jpg",
+    "review": "A comprehensive guide for men navigating the complexities of dating, offering practical advice and strategies for building confidence and successful relationships.",
+    "totalPages": 240,
+    "rating": 4.6,
+    "category": "Self-Help",
+    "tags": ["Relationships", "Dating", "Self-Improvement"],
+    "publisher": "TCK Publishing",
+    "yearOfPublishing": 2015
+  },
+  {
+    "bookId": 2,
+    "bookName": "Why Do You Hate Money?",
+    "author": "Joey Percia",
+    "image": "hate_money.jpg",
+    "review": "An eye-opening exploration of mindset shifts and practical strategies to overcome limiting beliefs and achieve financial abundance and freedom.",
+    "totalPages": 176,
+    "rating": 4.7,
+    "category": "Personal Finance",
+    "tags": ["Wealth Mindset", "Financial Freedom", "Money Management"],
+    "publisher": "Bailey Richert",
+    "yearOfPublishing": 2019
+  },
+  {
+    "bookId": 3,
+    "bookName": "The Hate U Give",
+    "author": "Angie Thomas",
+    "image": "hate_u_give.jpg",
+    "review": "A powerful and timely novel that addresses issues of race, identity, and social justice through the eyes of a teenage girl who witnesses a police shooting.",
+    "totalPages": 464,
+    "rating": 4.8,
+    "category": "Young Adult",
+    "tags": ["Social Issues", "Coming-of-Age", "Contemporary"],
+    "publisher": "Balzer + Bray",
+    "yearOfPublishing": 2017
+  },
+  {
+    "bookId": 4,
+    "bookName": "The Scholarship Monthly Planner",
+    "author": "Jessica Thomson",
+    "image": "scholarship_planner.jpg",
+    "review": "An indispensable tool for students seeking scholarships, providing a structured approach to organizing applications, deadlines, and requirements.",
+    "totalPages": 128,
+    "rating": 4.5,
+    "category": "Education",
+    "tags": ["Scholarship", "College Planning", "Student Resources"],
+    "publisher": "CreateSpace Independent Publishing Platform",
+    "yearOfPublishing": 2020
+  },
+  {
+    "bookId": 5,
+    "bookName": "Annotated Texas Family Code",
+    "author": "Mark E. Keaton",
+    "image": "annotated_texas_family.jpg",
+    "review": "A comprehensive reference guide to the Texas Family Code, featuring annotations, case law summaries, and cross-references for legal professionals and students.",
+    "totalPages": 1424,
+    "rating": 4.4,
+    "category": "Law",
+    "tags": ["Legal Reference", "Texas Law", "Family Law"],
+    "publisher": "Thomson Reuters",
+    "yearOfPublishing": 2021
+  },
+  {
+    "bookId": 6,
+    "bookName": "Loving Jesus More",
+    "author": "Philip Ryken",
+    "image": "loving_jesus_more.jpg",
+    "review": "A deeply spiritual and practical guide for Christians seeking to deepen their relationship with Jesus Christ and grow in love, devotion, and discipleship.",
+    "totalPages": 208,
+    "rating": 4.9,
+    "category": "Religion",
+    "tags": ["Christian Living", "Spiritual Growth", "Devotional"],
+    "publisher": "Crossway",
+    "yearOfPublishing": 2005
+  }
+]
