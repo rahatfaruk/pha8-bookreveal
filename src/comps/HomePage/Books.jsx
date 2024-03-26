@@ -1,4 +1,6 @@
 import { Star } from "react-bootstrap-icons";
+import { Link } from "react-router-dom";
+import Tags from "../Tags";
 
 function Books() {
   return (  
@@ -19,23 +21,20 @@ function Books() {
 export default Books;
 
 
-function Book() {
+function Book({id}) {
   return (  
-    <div className="border rounded-md p-4 shadow">
+    <Link to={`/book-details/${id}`} className="block border rounded-md p-4 shadow hover:cursor-pointer hover:shadow-lg">
       <figure className="bg-gray-100 rounded-md p-4 mb-4">
         <img src="/img/dating-playbook.png" className="max-w-full mx-auto h-40" alt="" />
       </figure>
-      <ul className="flex gap-4 text-sm mb-2">
-        <li className="text-green-500 bg-green-100 px-1.5 rounded-sm">Identity</li>
-        <li className="text-green-500 bg-green-100 px-1.5 rounded-sm">Young Adult</li>
-      </ul>
+      <Tags tags={ ['romance', 'fiction'] } isSmall={true} />
       <h3 className="text-xl font-semibold mb-1">The Catcher in the Rye</h3>
       <p>By : Awlad Hossain</p>
       <div className="flex gap-6 justify-between border-t border-dashed pt-2 mt-2">
         <p>Fiction</p>
         <p className="flex items-center gap-2">5.00 <Star /></p>
       </div>
-    </div>
+    </Link>
   );
 }
 
