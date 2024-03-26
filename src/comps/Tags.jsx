@@ -1,10 +1,10 @@
 function Tags({tags, isSmall}) {
   return (  
-    <ul className={`flex gap-4 mb-2 ${isSmall ? "text-sm" : ''}`}>
+    <div className={`flex gap-4 ${isSmall ? "text-sm" : ''}`}>
       {tags?.map(tag => 
-        <li key={tag} className="text-green-500 bg-green-100 px-1.5 rounded-sm">#{tag}</li>
+        <span key={tag} className="inline-block text-green-500 bg-green-100 px-1.5 rounded-sm">#{tag}</span>
       )}
-    </ul>
+    </div>
   );
 }
 
