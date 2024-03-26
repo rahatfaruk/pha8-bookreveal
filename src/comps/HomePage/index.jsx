@@ -1,7 +1,11 @@
+import Banner from "./Banner";
+import Books from "./Books";
+
 function HomePage() {
   return (  
     <div>
-      Homepag
+      <Banner />
+      <Books />
     </div>
   );
 }
