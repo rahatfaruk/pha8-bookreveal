@@ -1,8 +1,12 @@
 import { Star } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 import Tags from "../Tags";
+import { BooksContext } from "../../App";
 
-function Books({books}) {
+function Books({}) {
+  const books = useContext(BooksContext)
+
   return (  
     <section className="px-4">
       <div className="max-w-screen-xl mx-auto py-8">

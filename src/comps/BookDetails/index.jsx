@@ -1,11 +1,13 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import {toast} from 'react-toastify';
 
 import Tags from "../Tags";
 import TableRow from "./TableRow";
+import { useContext } from "react";
+import { BooksContext } from "../../App";
 
 function BookDetails() {
-  const books = useLoaderData()
+  const books = useContext(BooksContext)
   const {id} = useParams()
   
   const selectedBook = books.find(book => book.bookId === parseInt(id))

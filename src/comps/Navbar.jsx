@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
     <nav className="px-4 border-b">
       <div className="max-w-screen-xl py-4 mx-auto grid grid-cols-[auto_1fr] md:grid-cols-[auto_1fr_auto] gap-4">
-        <h1 className='text-2xl'>Book Vibe</h1>
+        <h1 className='text-2xl'>BookReveal</h1>
 
         <div className="flex items-center justify-end md:order-1 gap-4">
           <button className="px-3 py-1 rounded-md text-white bg-green-600 hover:opacity-85">Sign In</button>

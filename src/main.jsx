@@ -12,9 +12,9 @@ import PagesToRead from './comps/PagesToRead';
 
 
 const router = createBrowserRouter(createRoutesFromElements(
-  <Route path='/' element={<App />} errorElement={<ErrorPage />} >
-    <Route index element={<HomePage />} loader={() => fetch('/books.json')} />
-    <Route path='book-details/:id' element={<BookDetails />} loader={() => fetch('/books.json')} />
+  <Route path='/' element={<App />} errorElement={<ErrorPage />} loader={() => fetch('/books.json')} >
+    <Route index element={<HomePage />} />
+    <Route path='book-details/:id' element={<BookDetails />} />
     <Route path='listed-books' element={<ListedBooks />} />
     <Route path='pages-to-read' element={<PagesToRead />} />
   </Route>
