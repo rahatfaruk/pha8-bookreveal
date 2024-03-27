@@ -25,7 +25,7 @@ function Book({bookId, image, tags, bookName, author, category, rating}) {
         <img src={image} className="max-w-full mx-auto h-40" alt="" />
       </figure>
       <Tags tags={ tags } isSmall={true} />
-      <h3 className="text-xl font-semibold mb-1">{bookName}</h3>
+      <h3 className="text-xl font-semibold my-1.5">{bookName}</h3>
       <p>By : {author}</p>
       <div className="flex gap-6 justify-between border-t border-dashed pt-2 mt-2">
         <p>{category}</p>

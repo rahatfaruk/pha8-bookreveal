@@ -13,7 +13,7 @@ import ListedBooks from './comps/ListedBooksPage';
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<App />} errorElement={<ErrorPage />} >
     <Route index element={<HomePage />} loader={() => fetch('/books.json')} />
-    <Route path='book-details/:id' element={<BookDetails />} />
+    <Route path='book-details/:id' element={<BookDetails />} loader={() => fetch('/books.json')} />
     <Route path='listed-books' element={<ListedBooks />} />
   </Route>
 ))
