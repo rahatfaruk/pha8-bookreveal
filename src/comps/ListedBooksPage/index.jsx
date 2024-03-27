@@ -1,7 +1,13 @@
-import { useEffect, useState } from "react";
-import Book from "./Book";
+import { useState } from "react";
+import BooksTabs from "./BooksTabs";
 
 function ListedBooks() {
+  const [sortBy, setSortBy] = useState('')
+
+  const handleSortBy = e => {
+    const sortQuery = (e.target.value);
+    setSortBy(sortQuery)
+  } 
 
   return (  
     <section className="px-4 mt-8 mb-4" >
@@ -11,46 +17,18 @@ function ListedBooks() {
         </header>
 
         <form className="flex justify-center py-6">
-          <button className="px-3 py-1 mx-auto rounded-md text-white bg-green-600 hover:opacity-85">Sort By</button>
+          <select className="px-3 py-1 mx-auto rounded-md text-white bg-green-600 hover:opacity-85" value={sortBy} onChange={handleSortBy}>
+            <option value="" disabled>Sort By</option>
+            <option value="rating">Rating</option>
+            <option value="pages">Number of pages</option>
+            <option value="published-year">Publisher year</option>
+          </select>
         </form>
 
-        <BooksTabs />
+        <BooksTabs sortBy={sortBy} />
       </div>
     </section>
   );
 }
 export default ListedBooks;
-
-
-function BooksTabs() {
-  const [readList, setReadList] = useState([])
-  const [wishlist, setWishlist] = useState([])
-  const [activeTab, setActiveTab] = useState('read')
-  const activeClass = `border-x border-t border-gray-600 -bottom-[1px]`
-
-  useEffect(() => {
-    setWishlist( JSON.parse(localStorage.getItem('bookvibe:wishlist')) || [] )
-    setReadList( JSON.parse(localStorage.getItem('bookvibe:read-list')) || [] )
-  }, [])
-
-  return (  
-    <div>
-      <div className="border-b mb-4">
-        <button 
-          className={`${activeTab==='read'? activeClass : ''} px-3 py-1 mx-auto rounded-t-md  hover:opacity-85 relative bg-white`}
-          onClick={() => setActiveTab('read')}
-        >Read Books</button>
-        <button 
-          className={`${activeTab==='wishlist'? activeClass : ''} px-3 py-1 mx-auto rounded-t-md hover:opacity-85 relative bg-white`}
-          onClick={() => setActiveTab('wishlist')}
-        >Wishlist Books</button>
-      </div>
-
-      <ul>
-        {activeTab==='read' && readList.map(book => <Book key={book.bookId} {...book} />)}
-        {activeTab==='wishlist' && wishlist.map(book => <Book key={book.bookId} {...book} />)}
-      </ul>
-    </div>
-  );
-}
 
