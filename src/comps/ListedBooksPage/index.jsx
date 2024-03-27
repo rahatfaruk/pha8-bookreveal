@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Book from "./Book";
 
 function ListedBooks() {
@@ -23,8 +23,18 @@ export default ListedBooks;
 
 
 function BooksTabs() {
+  // let wishlistLS = JSON.parse(localStorage.getItem('bookvibe:wishlist')) || []
+  // const readListLS = JSON.parse(localStorage.getItem('bookvibe:read-list')) || []
+  // console.log(wishlistLS, readListLS);
+  const [readList, setReadList] = useState([])
+  const [wishlist, setWishlist] = useState([])
   const [activeTab, setActiveTab] = useState('read')
   const activeClass = `border-x border-t border-gray-600 -bottom-[1px]`
+
+  useEffect(() => {
+    setWishlist( JSON.parse(localStorage.getItem('bookvibe:wishlist')) || [] )
+    setReadList( JSON.parse(localStorage.getItem('bookvibe:read-list')) || [] )
+  }, [])
 
   return (  
     <div>
@@ -40,9 +50,8 @@ function BooksTabs() {
       </div>
 
       <ul>
-        <Book />
-        <Book />
-        <Book />
+        {activeTab==='read' && readList.map(book => <Book key={book.bookId} {...book} />)}
+        {activeTab==='wishlist' && wishlist.map(book => <Book key={book.bookId} {...book} />)}
       </ul>
     </div>
   );
