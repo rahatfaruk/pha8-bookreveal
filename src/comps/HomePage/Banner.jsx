@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import BannerImg from '/img/dating-playbook-lg.png';
+import BannerImg from '/img/ikigai.jpg';
 
 function Banner() {
   return (  
