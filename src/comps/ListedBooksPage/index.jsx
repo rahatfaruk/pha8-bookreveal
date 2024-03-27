@@ -23,9 +23,6 @@ export default ListedBooks;
 
 
 function BooksTabs() {
-  // let wishlistLS = JSON.parse(localStorage.getItem('bookvibe:wishlist')) || []
-  // const readListLS = JSON.parse(localStorage.getItem('bookvibe:read-list')) || []
-  // console.log(wishlistLS, readListLS);
   const [readList, setReadList] = useState([])
   const [wishlist, setWishlist] = useState([])
   const [activeTab, setActiveTab] = useState('read')

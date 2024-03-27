@@ -8,6 +8,7 @@ import HomePage from './comps/HomePage';
 import ErrorPage from './comps/ErrorPage';
 import BookDetails from './comps/BookDetails';
 import ListedBooks from './comps/ListedBooksPage';
+import PagesToRead from './comps/PagesToRead';
 
 
 const router = createBrowserRouter(createRoutesFromElements(
@@ -15,6 +16,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route index element={<HomePage />} loader={() => fetch('/books.json')} />
     <Route path='book-details/:id' element={<BookDetails />} loader={() => fetch('/books.json')} />
     <Route path='listed-books' element={<ListedBooks />} />
+    <Route path='pages-to-read' element={<PagesToRead />} />
   </Route>
 ))
 

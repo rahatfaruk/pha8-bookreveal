@@ -1,8 +1,8 @@
+import { Link } from "react-router-dom";
 import { FileBarGraph, GeoAlt, People } from "react-bootstrap-icons";
 import Tags from "../Tags";
-import { Link } from "react-router-dom";
 
-function Book({bookId, image, tags, bookName, author, category, review, rating, totalPages, yearOfPublishing, publisher}) {
+function Book({bookId, image, tags, bookName, author, category, rating, totalPages, yearOfPublishing, publisher}) {
   return (  
     <li className="p-4 mb-4 border rounded-md flex flex-col md:flex-row gap-4 md:gap-6">
       <figure className="bg-gray-100 rounded-md p-4 mb-4">
