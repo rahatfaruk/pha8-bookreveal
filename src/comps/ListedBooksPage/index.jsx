@@ -1,5 +1,6 @@
 import { useState } from "react";
 import BooksTabs from "./BooksTabs";
+import PageTitle from "../PageTitle";
 
 function ListedBooks() {
   const [sortBy, setSortBy] = useState('')
@@ -12,9 +13,7 @@ function ListedBooks() {
   return (  
     <section className="px-4 mt-8 mb-4" >
       <div className="max-w-screen-xl mx-auto">
-        <header className="py-4 bg-gray-200 rounded-md">
-          <h2 className="text-3xl md:text-4xl text-center">Books</h2>
-        </header>
+        <PageTitle title={"Books"} />
 
         <form className="flex justify-center py-6">
           <select className="px-3 py-1 mx-auto rounded-md text-white bg-green-600 hover:opacity-85" value={sortBy} onChange={handleSortBy}>

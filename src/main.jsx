@@ -9,6 +9,7 @@ import ErrorPage from './comps/ErrorPage';
 import BookDetails from './comps/BookDetails';
 import ListedBooks from './comps/ListedBooksPage';
 import PagesToRead from './comps/PagesToRead';
+import EventsPage from './comps/EventsPage/index.jsx';
 
 
 const router = createBrowserRouter(createRoutesFromElements(
@@ -17,6 +18,7 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path='book-details/:id' element={<BookDetails />} />
     <Route path='listed-books' element={<ListedBooks />} />
     <Route path='pages-to-read' element={<PagesToRead />} />
+    <Route path='events' element={<EventsPage />} />
   </Route>
 ))
 

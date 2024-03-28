@@ -6,6 +6,7 @@ const navLinks = [
   {id: 1, text: 'Home', path: '/'},
   {id: 2, text: 'Listed Books', path: '/listed-books'},
   {id: 3, text: 'Pages to Read', path: '/pages-to-read'},
+  {id: 4, text: 'Events', path: '/events'},
 ]
 
 export default function Navbar() {

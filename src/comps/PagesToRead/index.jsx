@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ShapeBarChart from "./ShapeBarChart";
+import PageTitle from "../PageTitle";
 
 function PagesToRead() {
   const [readList, setReadList] = useState([])
@@ -17,9 +18,7 @@ function PagesToRead() {
   return (  
     <section className="px-4 mt-8 mb-4">
       <div className="max-w-screen-xl mx-auto">
-        <header className="py-4 bg-gray-200 rounded-md">
-          <h2 className="text-3xl md:text-4xl text-center">Pages To Read</h2>
-        </header>
+        <PageTitle title={"Pages To Read"} />
 
         <div className="py-8 my-8 border rounded-md">
           <ShapeBarChart data={readList} />
