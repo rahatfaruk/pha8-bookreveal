@@ -43,8 +43,17 @@ export default function BooksTabs({sortBy}) {
       </div>
 
       <ul>
-        {activeTab==='read' && readList.map(book => <Book key={book.bookId} {...book} />)}
-        {activeTab==='wishlist' && wishlist.map(book => <Book key={book.bookId} {...book} />)}
+        {activeTab==='read' && (
+          readList.length < 1 ? 
+          <li className="border p-8 rounded-md text-3xl">List is empty!</li> :
+          readList.map(book => <Book key={book.bookId} {...book} />)
+        )}
+        
+        {activeTab==='wishlist' && (
+          wishlist.length < 1 ? 
+          <li className="border p-8 rounded-b-md text-3xl">List is empty!</li> :
+          wishlist.map(book => <Book key={book.bookId} {...book} />)
+        )}
       </ul>
     </div>
   );
