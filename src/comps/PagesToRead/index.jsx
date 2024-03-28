@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import ShapeBarChart from "./ShapeBarChart";
 import PageTitle from "../PageTitle";
+import useLocalStorage from "../useLocalStorage";
 
 function PagesToRead() {
   const [readList, setReadList] = useState([])
+  const {lsGetItem, lsSetItem} = useLocalStorage()
 
   // update readlist from ls
   useEffect(() => {
-    const readListLS = JSON.parse(localStorage.getItem('bookvibe:read-list')) || []
+    const readListLS = lsGetItem('readlist')
 
     const modifiedReadList = readListLS.map(({bookId, bookName, totalPages}) => {
       return {bookName, totalPages, bookId}

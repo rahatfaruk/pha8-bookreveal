@@ -1,13 +1,12 @@
 ## About project:
   - **BookReveal**. Developed by *Rahat Faruk* (me).
   - My assignment 8, phero. Focused on react-router. Source repo: [B9A8-Book-Review](https://github.com/ProgrammingHero1/B9A8-Book-Review)
-  - Lang & package: react, tailwindcss, react-router, recharts, react-bootstrap-icons
+  - Lang & package: react, tailwindcss, react-router, useContext, recharts, react-bootstrap-icons
   - My private repo (hosted on phero): https://github.com/programming-hero-web-course-4/b9a8-book-vibe-rahatfaruk 
   - My live site: 
 
 
 ### Features:
-  - Context api is used to access books (code)
   - localStorage is used to store individual bookList, wishlist (code)
   - We can create personal list of already read books
   - We can create our wishlist list of non-read books but already read books can't be added

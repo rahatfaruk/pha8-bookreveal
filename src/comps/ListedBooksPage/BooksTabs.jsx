@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react"
 import Book from "./Book"
+import useLocalStorage from "../useLocalStorage"
 
 export default function BooksTabs({sortBy}) {
   const [readList, setReadList] = useState([])
   const [wishlist, setWishlist] = useState([])
   const [activeTab, setActiveTab] = useState('read')
+  const {lsSetItem, lsGetItem} = useLocalStorage()
   const activeTabClass = `border-x border-t border-gray-600 -bottom-[1px]`
 
   // update readlist & wishlist from ls data
   useEffect(() => {
-    const lsWishlist = JSON.parse(localStorage.getItem('bookvibe:wishlist')) || []
-    const lsReadList = JSON.parse(localStorage.getItem('bookvibe:read-list')) || []
+    const lsWishlist = lsGetItem('wishlist')
+    const lsReadList = lsGetItem('readlist')
     
     if (sortBy) {
       // sort read-list (descending) based on total-pages  

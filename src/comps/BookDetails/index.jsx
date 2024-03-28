@@ -5,19 +5,21 @@ import Tags from "../Tags";
 import TableRow from "./TableRow";
 import { useContext } from "react";
 import { BooksContext } from "../../App";
+import useLocalStorage from "../useLocalStorage";
 
 function BookDetails() {
   const books = useContext(BooksContext)
   const {id} = useParams()
+  const {lsGetItem, lsSetItem} = useLocalStorage()
   
   const selectedBook = books.find(book => book.bookId === parseInt(id))
   const { image, tags, bookName, author, category, review, rating, totalPages, yearOfPublishing, publisher } = selectedBook
 
   const handleAddingReadList = () => {
-    const readListLS = JSON.parse(localStorage.getItem('bookvibe:read-list')) || []
+    const readListLS = lsGetItem('readlist')
     const existBookOnReadList = readListLS.find(book => book.bookId === parseInt(id))
 
-    let wishlistLS = JSON.parse(localStorage.getItem('bookvibe:wishlist')) || []
+    let wishlistLS = lsGetItem('wishlist')
     const existBookOnWishlist = wishlistLS.find(book => book.bookId === parseInt(id))
     
     // show alert if alredy exist on read-list
@@ -29,20 +31,20 @@ function BookDetails() {
       // delete book from wishlist if already exist && save  
       if (existBookOnWishlist) {
         wishlistLS = wishlistLS.filter(book => book.bookId !== parseInt(id))
-        localStorage.setItem('bookvibe:wishlist', JSON.stringify(wishlistLS))
+        lsSetItem('wishlist', wishlistLS)
       }
       readListLS.push(selectedBook)
-      localStorage.setItem('bookvibe:read-list', JSON.stringify(readListLS))
+      lsSetItem('readlist', readListLS)
       toast.success('Added to "read list"')
     }
 
   }
 
   const handleAddingWishlist = () => {
-    const wishlistLS = JSON.parse(localStorage.getItem('bookvibe:wishlist')) || []
+    const wishlistLS = lsGetItem('wishlist')
     const existBookOnWishlist = wishlistLS.find(book => book.bookId === parseInt(id))
     
-    const readListLS = JSON.parse(localStorage.getItem('bookvibe:read-list')) || []
+    const readListLS = lsGetItem('readlist')
     const existBookOnReadList = readListLS.find(book => book.bookId === parseInt(id))
 
     // show alert if already exist on wishlist
@@ -56,7 +58,7 @@ function BookDetails() {
     // add the book to wishlist
     else {
       wishlistLS.push(selectedBook)
-      localStorage.setItem('bookvibe:wishlist', JSON.stringify(wishlistLS))
+      lsSetItem('wishlist', wishlistLS)
       toast.success('Added to wishlist')
     }
   }
