@@ -3,7 +3,7 @@
   - My assignment 8, phero. Focused on react-router. Source repo: [B9A8-Book-Review](https://github.com/ProgrammingHero1/B9A8-Book-Review)
   - Lang & package: react, tailwindcss, react-router, useContext, recharts, react-bootstrap-icons
   - My private repo (hosted on phero): https://github.com/programming-hero-web-course-4/b9a8-book-vibe-rahatfaruk 
-  - My live site: 
+  - My live site (netlify): https://pha8-rf-book-reveal.netlify.app/ 
 
 
 ### Features:
